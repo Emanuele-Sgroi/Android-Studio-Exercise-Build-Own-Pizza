@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Your Own Pizza"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/textInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:textAlignment="center"
+            android:textColor="@color/neutral"
+            android:text="Select your favourite ingredients for your pizza."
+            android:layout_marginTop="8dp" />
+
+        <!-- Pizza Image -->
+        <FrameLayout
+            android:id="@+id/pizzaImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/imagePizzaBase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pizza_base" />
+
+            <!-- Ingredient images will be added dynamically here -->
+        </FrameLayout>
+
+        <!-- Checkboxes for Ingredients -->
+        <TextView
+            android:text="Select Ingredients:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/neutral"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="5dp"/>
+
+        <CheckBox android:id="@+id/checkSalami" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Salami - £2" />
+        <CheckBox android:id="@+id/checkMushrooms" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Mushrooms - £1" />
+        <CheckBox android:id="@+id/checkRedPeppers" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Red Peppers - £3" />
+        <CheckBox android:id="@+id/checkGreenPeppers" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Green Peppers - £2" />
+        <CheckBox android:id="@+id/checkTomatoes" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Tomatoes - £1" />
+        <CheckBox android:id="@+id/checkBlackOlives" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Black Olives - £4" />
+        <CheckBox android:id="@+id/checkBasil" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Basil - Free" />
+
+        <!-- Horizontal Scrollable Ingredient Section -->
+        <TextView
+            android:id="@+id/textSelectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Selection:"
+            android:textColor="@color/neutral"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:elevation="12dp">
+
+            <LinearLayout
+                android:id="@+id/selectedIngredientsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/textTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: £6"
+            android:textSize="18sp"
+            android:textColor="@color/neutral"
+            android:layout_marginTop="16dp" />
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/buttonOrderBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Just the Pizza Base"
+            android:layout_marginTop="16dp"
+            android:background="@color/orange"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:id="@+id/buttonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/buttonClearSelection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear Selection"
+                android:background="@color/orange"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"/>
+
+            <Button
+                android:id="@+id/buttonPlaceOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Place Order"
+                android:background="@color/orange"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
